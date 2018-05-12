@@ -31,11 +31,13 @@ var Preload = {
 		
 		// CLASSES
 		game.load.script("player", "js/class/player.js");
+		game.load.script("ball", "js/class/ball.js");
 		
 		// ====
 		// CHARGEMENT DES ASSETS
 		game.load.image("ground", "assets/img/ground.png"); 
 		game.load.image("player", "assets/img/player.png"); 
+		game.load.image("ball", "assets/img/ball.png"); 
     },   
     
     create: function () { 

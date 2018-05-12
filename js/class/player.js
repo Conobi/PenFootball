@@ -5,7 +5,7 @@ const plyJumpsMax = 2;
 
 class Player {
 
-	constructor(x, y, cursors) {
+	constructor(x, y, cursors, tint) {
 			
 		this.isUpKeyReleased = true;
 		this.numberOfJumps = 0;
@@ -16,14 +16,24 @@ class Player {
 		this.player.anchor.setTo(0.5, 0.5);
 
 		this.player.body.bounce.y = 0;
-		this.player.body.collideWorldBounds = true;
-		//this.player.body.setSize(x, y, 5, 16);
+		this.player.body.collideWorldBounds = true;		
 		this.player.body.gravity.y = plyGravity;
+
+		this.player.tint = tint;
 	}
 
 	update(platform) {
 
-        var hitPlatform = game.physics.arcade.collide(this.player, platform);
+		var hitPlatform = game.physics.arcade.collide(this.player, platform);
+		
+		for (var i=0; i < players.length; i++) {
+			
+			if (this.player == players[i])
+				continue;
+
+			game.physics.arcade.collide(this.player, players[i]);
+		}
+			
 
 		this.player.body.velocity.x = 0;
 

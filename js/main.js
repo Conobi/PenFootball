@@ -8,7 +8,7 @@ const ratioY = height / initialHeight;
 
 var game = new Phaser.Game(width, height, Phaser.CANVAS, 'game');
 var players = [], controls = [];
-var platforms;
+var platforms, ball;
 
 game.state.add('BootStrap', BootStrap);
 game.state.start('BootStrap');

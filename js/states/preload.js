@@ -29,14 +29,32 @@ var Preload = {
 		// STATES
 		game.load.script("main_menu", "js/states/game.js");
 		
+		// CLASSES
+		game.load.script("player", "js/class/player.js");
+		
 		// ====
 		// CHARGEMENT DES ASSETS
 		game.load.image("ground", "assets/img/ground.png"); 
+		game.load.image("player", "assets/img/player.png"); 
     },   
     
     create: function () { 
 		game.state.add('Game', Game);
 		game.state.start('Game');
+
+		controls.push({
+            up: game.input.keyboard.addKey(Phaser.Keyboard.Z),
+            down: game.input.keyboard.addKey(Phaser.Keyboard.S),
+            left: game.input.keyboard.addKey(Phaser.Keyboard.Q),
+            right: game.input.keyboard.addKey(Phaser.Keyboard.D),
+        });
+        
+        controls.push({
+            up: game.input.keyboard.addKey(Phaser.Keyboard.UP),
+            down: game.input.keyboard.addKey(Phaser.Keyboard.DOWN),
+            left: game.input.keyboard.addKey(Phaser.Keyboard.LEFT),
+            right: game.input.keyboard.addKey(Phaser.Keyboard.RIGHT),
+        });
     }
     
 };

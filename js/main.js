@@ -7,7 +7,8 @@ const ratioX = width / initialWidth;
 const ratioY = height / initialHeight;
 
 var game = new Phaser.Game(width, height, Phaser.CANVAS, 'game');
-console.log("RESOLUTION: " + width + " x " + height);
+var players = [], controls = [];
+var platforms;
 
 game.state.add('BootStrap', BootStrap);
 game.state.start('BootStrap');
@@ -20,3 +21,4 @@ function convertX(x) {
 function convertY(y) {
     return y * height / 100;
 }
+

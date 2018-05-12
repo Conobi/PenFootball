@@ -22,12 +22,13 @@ class Player {
 		this.player.body.friction = 1;
 
 		this.player.tint = tint;
+
 	}
 
 	update(platform) {
 
 		game.physics.arcade.collide(this.player, platform);
-		game.physics.arcade.collide(this.player, ball.ball);
+		game.physics.arcade.collide(this.player, ball.ball, this.collisionHandler, null, this);
 		this.player.body.velocity.x -= this.player.body.velocity.x / plyDecel;		
 		
 		for (var i=0; i < players.length; i++) {
@@ -61,4 +62,16 @@ class Player {
 			this.numberOfJumps = 0;
 	}
 
+	collisionHandler (player, ball) {
+		console.log("Le joueur a tapé la ball !");
+		
+
+		// la balle part à 45degrees donc vel x = vel y
+		var vel = player.body.velocity.x / 1;
+
+		ball.body.velocity.x += vel;
+		ball.body.velocity.y += vel;
+
+		console.log("vel -> " + vel);
+    }//*/
 }

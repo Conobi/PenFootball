@@ -6,7 +6,7 @@ class Ball {
 		game.physics.enable(this.ball);
 		this.ball.anchor.setTo(0.5, 0.5);
 
-		this.ball.body.bounce.y = 0;
+		this.ball.body.bounce.y = 0.5;
 		this.ball.body.collideWorldBounds = true;		
 		this.ball.body.gravity.y = plyGravity;
 	}

@@ -15,10 +15,11 @@ var Game = {
 
 		platforms.setAll('body.immovable', true);
 		
-		players.push(new Player(width * 0.2, convertY(82.8), controls[0], 0x0088bf));
-		players.push(new Player(width * 0.8, convertY(82.8), controls[1], 0xc40233));
 
 		ball = new Ball(width * 0.5, convertY(60));
+
+		players.push(new Player(width * 0.2, convertY(82.8), controls[0], 0x0088bf));
+		players.push(new Player(width * 0.8, convertY(82.8), controls[1], 0xc40233));
     },
     
 	update: function () {

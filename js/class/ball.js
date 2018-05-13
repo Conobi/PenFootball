@@ -17,9 +17,10 @@ class Ball {
 		this.ball.body.gravity.y = plyGravity;
 	}
 
-	update(platform) {
+	update() {
 
-	 	game.physics.arcade.collide(this.ball, platform);
+		 game.physics.arcade.collide(this.ball, platforms);
+		 game.physics.arcade.collide(this.ball, toitsGoals);
 		
 		for (var i=0; i < players.length; i++)		
 			game.physics.arcade.overlap(this.ball, players[i].player, this.playerHit, null, this);	
@@ -27,10 +28,13 @@ class Ball {
 		for (var i=0; i < goals.length; i++)		
 			game.physics.arcade.collide(this.ball, goals[i].goal, this.goalHit, null, this);	
 
-		if (this.ball.body.x < 26)
-			this.ball.body.x += 1;
-		else if (this.ball.body.x > game.width - 26)
-			this.ball.body.x -= 1;
+		if (this.ball.body.y > game.height - 180)
+			return;
+
+		if (this.ball.body.x < 30)
+			this.ball.body.velocity.x += 10;
+		else if (this.ball.body.x > game.width - 80)
+			this.ball.body.velocity.x -= 10;
 	}
 
 	
@@ -43,10 +47,13 @@ class Ball {
 		if (vel > ballMaxVel)
 			vel = ballMaxVel;
 
-		var dir = ball.body.x - player.body.x;		
+		var dir = ball.body.x - player.body.x;
+		
+		if ((dir > 0 && ball.body.velocity.x < 0) || (dir < 0 && ball.body.velocity.x > 0))
+			ball.body.velocity.x = 0;
 
 		ball.body.velocity.x += vel * Math.sign(dir);
-		ball.body.velocity.y -= vel;
+		ball.body.velocity.y = -vel * 3;
 	}
 	
 	goalHit (ball, goal) {

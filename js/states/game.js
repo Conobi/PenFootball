@@ -15,6 +15,9 @@ var Game = {
 		// On créer les plateformes
 		platforms = game.add.group();
 		platforms.enableBody = true;
+		
+		toitsGoals = game.add.group();
+		toitsGoals.enableBody = true;
 
 		var ground = platforms.create(0, convertY(100-8), "ground");
 		ground.width = convertX(100);
@@ -39,13 +42,14 @@ var Game = {
 		text.resolution = 3;
 
 		platforms.setAll('body.immovable', true);
+		toitsGoals.setAll('body.immovable', true);
     },
     
 	update: function () {
 		for (var i=0; i < players.length; i++)
-			players[i].update(platforms);
+			players[i].update();
 
-		ball.update(platforms);
+		ball.update();
 	},
 
 	render: function () {

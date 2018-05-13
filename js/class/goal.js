@@ -10,9 +10,10 @@ class Goal {
         this.goal.scale.setTo(scaleX, 1);
         this.goal.id = id;
 
-        var ground = platforms.create(x, y-20, "goal_toit");
-        ground.scale.setTo(scaleX, 1);        
-
+        var toit = toitsGoals.create(x, y-20, "goal_toit");
+        toit.scale.setTo(scaleX, 1);  
+        //toit.angle = 45;//*/
+        
         if (id == 0)
 			this.goal.tint = colorBlue;
 		else

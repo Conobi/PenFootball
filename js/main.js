@@ -7,7 +7,7 @@ const ratioX = width / initialWidth;
 const ratioY = height / initialHeight;
 
 var game = new Phaser.Game(width, height, Phaser.CANVAS, 'game');
-var players = [], controls = [], goals = [];
+var players = [], controls = [], goals = [], toitsGoals = [];
 var platforms, ball;
 
 var scoreBlue = 0, scoreRed = 0;

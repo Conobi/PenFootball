@@ -29,10 +29,10 @@ class Player {
 			this.player.tint = colorRed;
 	}
 
-	update(platform) {
+	update() {
 
 		// collision entre les joueurs
-		game.physics.arcade.collide(this.player, platform);		
+		game.physics.arcade.collide(this.player, platforms);		
 		
 		for (var i=0; i < players.length; i++) {
 			

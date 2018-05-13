@@ -6,11 +6,11 @@ const plyDecel = 8;
 
 class Player {
 
-	constructor(x, y, cursors, tint) {
+	constructor(x, y, id) {
 			
 		this.isUpKeyReleased = true;
 		this.numberOfJumps = 0;
-		this.cursors = cursors;
+		this.cursors = controls[id];
 	
 		this.player = game.add.sprite(x, y, 'player');
 		game.physics.enable(this.player);
@@ -21,15 +21,16 @@ class Player {
 		this.player.body.gravity.y = plyGravity;
 		this.player.body.friction = 1;
 
-		this.player.tint = tint;
-
+		if (id == 0)
+			this.player.tint = 0x0088bf;
+		else
+			this.player.tint = 0xc40233;
 	}
 
 	update(platform) {
 
-		game.physics.arcade.collide(this.player, platform);
-		game.physics.arcade.collide(this.player, ball.ball, this.collisionHandler, null, this);
-		this.player.body.velocity.x -= this.player.body.velocity.x / plyDecel;		
+		// collision entre les joueurs
+		game.physics.arcade.collide(this.player, platform);		
 		
 		for (var i=0; i < players.length; i++) {
 			
@@ -39,7 +40,7 @@ class Player {
 			game.physics.arcade.collide(this.player, players[i].player);
 		}
 
-		
+		this.player.body.velocity.x -= this.player.body.velocity.x / plyDecel;		
 
 		if (this.cursors.left.isDown)
 			this.player.body.velocity.x = -plySpeed * game.time.elapsed;
@@ -51,8 +52,6 @@ class Player {
 			this.player.body.velocity.y = -plyJumpforce;	
 			this.numberOfJumps++;	
 			this.isUpKeyReleased = true;
-			
-			console.log("numberOfJumps -> " + this.numberOfJumps);
 		}
 
 		if (this.cursors.up.isUp)
@@ -61,17 +60,4 @@ class Player {
 		if (this.player.body.touching.down || this.player.body.blocked.down)
 			this.numberOfJumps = 0;
 	}
-
-	collisionHandler (player, ball) {
-		console.log("Le joueur a tapé la ball !");
-		
-
-		// la balle part à 45degrees donc vel x = vel y
-		var vel = player.body.velocity.x / 1;
-
-		ball.body.velocity.x += vel;
-		ball.body.velocity.y += vel;
-
-		console.log("vel -> " + vel);
-    }//*/
 }

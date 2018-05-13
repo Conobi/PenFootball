@@ -20,9 +20,7 @@ var Game = {
 		ground.width = convertX(100);
 		ground.height = convertY(8);
 		ground.tint = colorGround;
-
-		platforms.setAll('body.immovable', true);
-		
+	
 		// ===
 		// On créer les acteurs (ball, players, goals)
 		ball = new Ball(width * 0.5, convertY(70));
@@ -39,6 +37,8 @@ var Game = {
 		var text = game.add.text(game.world.centerX, convertY(19.0), scoreBlue + " - " + scoreRed, style);
 		text.anchor.setTo(.5,.5);
 		text.resolution = 3;
+
+		platforms.setAll('body.immovable', true);
     },
     
 	update: function () {
@@ -49,7 +49,7 @@ var Game = {
 	},
 
 	render: function () {
-		for (var i=0; i < players.length; i++)
+		/*for (var i=0; i < players.length; i++)
 			game.debug.body(players[i].player);//*/
 
 		game.debug.spriteInfo(ball.ball, 32, 32);

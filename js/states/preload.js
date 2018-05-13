@@ -40,6 +40,7 @@ var Preload = {
 		game.load.image("player", "assets/img/player.png"); 
 		game.load.image("ball", "assets/img/ball.png"); 
 		game.load.image("goal", "assets/img/goal.png");
+		game.load.image("goal_toit", "assets/img/goal_toit.png");
     },   
     
     create: function () { 

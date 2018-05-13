@@ -12,7 +12,7 @@ class Ball {
 		
 		this.ball.body.setCircle(20);
 		this.ball.body.mass = 0.5;
-		this.ball.body.bounce.y = 0.8;
+		this.ball.body.bounce.y = 0.5;
 		this.ball.body.collideWorldBounds = true;		
 		this.ball.body.gravity.y = plyGravity;
 	}
@@ -26,6 +26,11 @@ class Ball {
 			
 		for (var i=0; i < goals.length; i++)		
 			game.physics.arcade.collide(this.ball, goals[i].goal, this.goalHit, null, this);	
+
+		if (this.ball.body.x < 26)
+			this.ball.body.x += 1;
+		else if (this.ball.body.x > game.width - 26)
+			this.ball.body.x -= 1;
 	}
 
 	

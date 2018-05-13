@@ -16,6 +16,8 @@ class Player {
 		game.physics.enable(this.player);
 		this.player.anchor.setTo(0.5, 0.5);
 
+		this.player.body.setCircle(30);
+		this.player.body.mass = 3;
 		this.player.body.bounce.y = 0;
 		this.player.body.collideWorldBounds = true;		
 		this.player.body.gravity.y = plyGravity;
@@ -37,7 +39,7 @@ class Player {
 			if (this.player == players[i])
 				continue;
 
-			game.physics.arcade.collide(this.player, players[i].player);
+			game.physics.arcade.overlap(this.player, players[i].player);
 		}
 
 		this.player.body.velocity.x -= this.player.body.velocity.x / plyDecel;		
@@ -61,3 +63,4 @@ class Player {
 			this.numberOfJumps = 0;
 	}
 }
+

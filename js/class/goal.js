@@ -6,7 +6,7 @@ class Goal {
         game.physics.enable(this.goal);
         
         this.goal.immovable = true;
-        //this.goal.anchor.setTo(anchorX, 0);
+        this.goal.anchor.setTo(0, 0);
         this.goal.scale.setTo(scaleX, 1);
         this.goal.id = id;
 

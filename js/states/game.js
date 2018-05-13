@@ -16,22 +16,22 @@ var Game = {
 		platforms = game.add.group();
 		platforms.enableBody = true;
 
-		var ground = platforms.create(0, convertY(100-5), "ground");
+		var ground = platforms.create(0, convertY(100-8), "ground");
 		ground.width = convertX(100);
-		ground.height = convertY(5);
+		ground.height = convertY(8);
 		ground.tint = colorGround;
 
 		platforms.setAll('body.immovable', true);
 		
 		// ===
 		// On créer les acteurs (ball, players, goals)
-		ball = new Ball(width * 0.5, convertY(60));
+		ball = new Ball(width * 0.5, convertY(70));
 
-		players.push(new Player(width * 0.2, convertY(82.8), 0));
-		players.push(new Player(width * 0.8, convertY(82.8), 1));
+		players.push(new Player(width * 0.2, convertY(75), 0));
+		players.push(new Player(width * 0.8, convertY(75), 1));
 		
-		goals.push(new Goal(0, convertY(81.5), 1, 0));
-		goals.push(new Goal(game.width, convertY(81.5), -1, 1));
+		goals.push(new Goal(0, convertY(78.5), 1, 0));
+		goals.push(new Goal(game.width, convertY(78.5), -1, 1));
 
 		// ===
 		// affiche le score
@@ -46,5 +46,12 @@ var Game = {
 			players[i].update(platforms);
 
 		ball.update(platforms);
+	},
+
+	render: function () {
+		for (var i=0; i < players.length; i++)
+			game.debug.body(players[i].player);//*/
+
+		game.debug.spriteInfo(ball.ball, 32, 32);
 	},
 };

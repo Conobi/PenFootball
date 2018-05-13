@@ -22,9 +22,9 @@ class Player {
 		this.player.body.friction = 1;
 
 		if (id == 0)
-			this.player.tint = 0x0088bf;
+			this.player.tint = colorBlue;
 		else
-			this.player.tint = 0xc40233;
+			this.player.tint = colorRed;
 	}
 
 	update(platform) {

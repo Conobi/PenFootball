@@ -8,7 +8,7 @@ var Game = {
 		platforms = [];
 		console.log("State 'game' loading");
 
-		game.stage.backgroundColor = '#182d3b';
+		game.stage.backgroundColor = constBG;
 		game.physics.startSystem(Phaser.Physics.ARCADE);
 	
 		// ===
@@ -16,9 +16,10 @@ var Game = {
 		platforms = game.add.group();
 		platforms.enableBody = true;
 
-		var ground = platforms.create(0, convertY(100-3.52), "ground");
+		var ground = platforms.create(0, convertY(100-5), "ground");
 		ground.width = convertX(100);
-		ground.height = convertY(3.52);
+		ground.height = convertY(5);
+		ground.tint = colorGround;
 
 		platforms.setAll('body.immovable', true);
 		
@@ -29,8 +30,8 @@ var Game = {
 		players.push(new Player(width * 0.2, convertY(82.8), 0));
 		players.push(new Player(width * 0.8, convertY(82.8), 1));
 		
-		goals.push(new Goal(0, convertY(82.8), 1, 0));
-		goals.push(new Goal(game.width, convertY(82.8), -1, 1));
+		goals.push(new Goal(0, convertY(81.5), 1, 0));
+		goals.push(new Goal(game.width, convertY(81.5), -1, 1));
 
 		// ===
 		// affiche le score

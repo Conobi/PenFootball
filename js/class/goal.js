@@ -11,8 +11,8 @@ class Goal {
         this.goal.id = id;
 
         if (id == 0)
-			this.goal.tint = 0x0088bf;
+			this.goal.tint = colorBlue;
 		else
-			this.goal.tint = 0xc40233;
+			this.goal.tint = colorRed;
     }
 }

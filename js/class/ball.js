@@ -1,3 +1,5 @@
+const ballMaxVel = 150;
+
 class Ball {
 
 	constructor(x, y) {
@@ -25,13 +27,18 @@ class Ball {
 	
 	playerHit (ball, player) {
 		// la balle part à 45degrees donc vel x = vel y
-		var vel = player.body.velocity.x / 1;
+		var vel = Math.abs(player.body.velocity.x);
 
-		if (Math.abs(vel) < 15)
+		if (vel < 15)
 			vel = 0;
+		if (vel > ballMaxVel)
+			vel = ballMaxVel;
+
+		var dir = ball.body.x - player.body.x;
+		vel *= Math.sign(dir);
 
 		ball.body.velocity.x += vel;
-		ball.body.velocity.y -= Math.abs(vel);
+		ball.body.velocity.y -= vel;
 	}
 	
 	goalHit (ball, goal) {

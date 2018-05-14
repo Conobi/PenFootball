@@ -13,8 +13,8 @@ var platforms, ball;
 var scoreBlue = 0, scoreRed = 0;
 
 // colors
-const colorBlue = 0x182D3B, colorRed = 0xE85F3E;
-const colorGround = 0xFFDE51, constBG = 0xB6E5B8;//*/
+const colorBlue = 0x0088bf, colorRed = 0xc40233;
+const colorGround = 0x000000, constBG = 0x182d3b;//*/
 /*const colorBlue = 0x3D85FF, colorRed = 0xFF4537;
 const colorGround = 0xC2E827, constBG = 0x81B8E5;//*/
 

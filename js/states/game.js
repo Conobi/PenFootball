@@ -56,6 +56,6 @@ var Game = {
 		/*for (var i=0; i < players.length; i++)
 			game.debug.body(players[i].player);//*/
 
-		game.debug.spriteInfo(ball.ball, 32, 32);
+		//game.debug.spriteInfo(ball.ball, 32, 32);
 	},
 };

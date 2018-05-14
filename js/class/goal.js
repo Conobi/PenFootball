@@ -12,7 +12,7 @@ class Goal {
 
         var toit = toitsGoals.create(x, y-20, "goal_toit");
         toit.scale.setTo(scaleX, 1);  
-        //toit.angle = 45;//*/
+        toit.alpha = 0;
         
         if (id == 0)
 			this.goal.tint = colorBlue;

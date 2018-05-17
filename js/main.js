@@ -15,9 +15,9 @@ var numberOfPlayers = 2;
 var scoreBlue = 0, scoreRed = 0;
 
 // colors
-const colorBlue = 0x546de5, colorRed = 0xc44569;
-const colorSecondBlue = 0x778beb, colorSecondRed = 0xcf6a87;
-const colorGround = 0xfd79a8, constBG = 0x81ecec;//*/
+const colorBlue = 0x0042ff, colorRed = 0xff0000;
+const colorSecondBlue = 0x95b2ff, colorSecondRed = 0xff9595;
+const colorGround = 0x019833, constBG = 0xccffff;//*/
 /*const colorBlue = 0x3D85FF, colorRed = 0xFF4537;
 const colorGround = 0xC2E827, constBG = 0x81B8E5;//*/
 

@@ -10,7 +10,7 @@ class Goal {
         this.goal.scale.setTo(scaleX, 1);
         this.goal.id = id;
 
-        var toit = toitsGoals.create(x, convertY(y-20), "goal_toit");
+        var toit = toitsGoals.create(x, y-this.goal.height-10, "goal_toit");
         toit.scale.setTo(scaleX, 1);  
         toit.alpha = 0;
         

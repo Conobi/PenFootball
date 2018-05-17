@@ -6,27 +6,44 @@ const plyDecel = 8;
 
 class Player {
 
-	constructor(x, y, id) {
+	constructor(x, y, id, isLobby) {
 			
 		this.isUpKeyReleased = true;
 		this.numberOfJumps = 0;
 		this.cursors = controls[id];
 	
-		this.player = game.add.sprite(x, y, 'player');
-		game.physics.enable(this.player);
+		this.player = game.add.sprite(x, y, 'player');		
 		this.player.anchor.setTo(0.5, 0.5);
 
-		this.player.body.setCircle(30);
-		this.player.body.mass = 3;
-		this.player.body.bounce.y = 0;
-		this.player.body.collideWorldBounds = true;		
-		this.player.body.gravity.y = plyGravity;
-		this.player.body.friction = 1;
+		// on active la gravité si on est pas dans le lobby
+		if (!isLobby) {
+			game.physics.enable(this.player);
 
-		if (id == 0)
+			this.player.body.setCircle(30);
+			this.player.body.mass = 3;
+			this.player.body.bounce.y = 0;
+			this.player.body.collideWorldBounds = true;		
+			this.player.body.gravity.y = plyGravity;
+			this.player.body.friction = 1;
+		}
+
+		switch (id) {
+			case 0:
 			this.player.tint = colorBlue;
-		else
+			break;
+
+			case 1:
 			this.player.tint = colorRed;
+			break;
+
+			case 2:
+			this.player.tint = colorSecondBlue;
+			break;
+
+			case 3:
+			this.player.tint = colorSecondRed;
+			break;
+		}
 	}
 
 	update() {

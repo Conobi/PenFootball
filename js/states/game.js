@@ -28,16 +28,20 @@ var Game = {
 		// On créer les acteurs (ball, players, goals)
 		ball = new Ball(width * 0.5, convertY(70));
 
-		players.push(new Player(width * 0.2, convertY(75), 0));
-		players.push(new Player(width * 0.8, convertY(75), 1));
+		players.push(new Player(width * 0.3, convertY(75), 0));
+		players.push(new Player(width * 0.7, convertY(75), 1));
+
+		if (numberOfPlayers > 2) {
+			players.push(new Player(width * 0.2, convertY(75), 2));
+			players.push(new Player(width * 0.8, convertY(75), 3));
+		}
 		
-		goals.push(new Goal(0, convertY(78.5), 1, 0));
-		goals.push(new Goal(game.width, convertY(78.5), -1, 1));
+		goals.push(new Goal(0, convertY(92), 1, 0));
+		goals.push(new Goal(game.width, convertY(92), -1, 1));
 
 		// ===
 		// affiche le score
-		var style = {font: convertX(5)+"px pixellari", fill: "#ffffff"};
-		var text = game.add.text(game.world.centerX, convertY(19.0), scoreBlue + " - " + scoreRed, style);
+		var text = game.add.text(game.world.centerX, convertY(19.0), scoreRed + " - " + scoreBlue, style);
 		text.anchor.setTo(.5,.5);
 		text.resolution = 3;
 

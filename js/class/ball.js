@@ -7,8 +7,9 @@ class Ball {
 	constructor(x, y) {
 			
 		this.ball = game.add.sprite(x, y, 'ball');
+		this.ball.anchor.setTo(1, 1);		
+
 		game.physics.enable(this.ball);
-		this.ball.anchor.setTo(0.5, 0.5);
 		
 		this.ball.body.setCircle(20);
 		this.ball.body.mass = 0.5;

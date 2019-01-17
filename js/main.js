@@ -15,11 +15,14 @@ var numberOfPlayers = 2;
 var scoreBlue = 0, scoreRed = 0;
 
 // colors
+const colorBlue = 0x006ca1, colorRed = 0xee2222;
+const colorSecondBlue = 0x0099e5, colorSecondRed = 0xff4c4c;
+const colorGround = 0x34bf49, constBG = 0xaef6a6;
+/*
+	OLD COLOR
 const colorBlue = 0x0042ff, colorRed = 0xff0000;
 const colorSecondBlue = 0x95b2ff, colorSecondRed = 0xff9595;
 const colorGround = 0x019833, constBG = 0xccffff;//*/
-/*const colorBlue = 0x3D85FF, colorRed = 0xFF4537;
-const colorGround = 0xC2E827, constBG = 0x81B8E5;//*/
 
 game.state.add('BootStrap', BootStrap);
 game.state.start('BootStrap');

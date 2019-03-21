@@ -1,7 +1,8 @@
-class Goal {
+class Goal 
+{
 
-	constructor(x, y, scaleX, id) {
-			        
+    constructor(x, y, scaleX, id) 
+    {			        
         this.goal = game.add.sprite(x, y, "goal");				
         game.physics.enable(this.goal);
         
@@ -15,8 +16,12 @@ class Goal {
         toit.alpha = 0;
         
         if (id == 0)
+        {
 			this.goal.tint = colorBlue;
-		else
+        }
+        else
+        {
 			this.goal.tint = colorRed;
+        }
     }
 }

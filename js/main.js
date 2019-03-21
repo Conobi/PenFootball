@@ -18,32 +18,31 @@ var scoreBlue = 0, scoreRed = 0;
 const colorBlue = 0x006ca1, colorRed = 0xee2222;
 const colorSecondBlue = 0x0099e5, colorSecondRed = 0xff4c4c;
 const colorGround = 0x34bf49, constBG = 0xaef6a6;
-/*
-	OLD COLOR
-const colorBlue = 0x0042ff, colorRed = 0xff0000;
-const colorSecondBlue = 0x95b2ff, colorSecondRed = 0xff9595;
-const colorGround = 0x019833, constBG = 0xccffff;//*/
 
 game.state.add('BootStrap', BootStrap);
 game.state.start('BootStrap');
 
 // on créer 2 fonctions qui permet d'afficher le jeu sur de multiples résolutions
-function convertX(x) {
+function convertX(x) 
+{
     return x * width / 100;
 }
 
-function convertY(y) {
+function convertY(y) 
+{
     return y * height / 100;
 }
 
-function loadGameTwo() {
+function loadGameTwo() 
+{
     numberOfPlayers = 2;
 
     game.state.add('Game', Game);
     game.state.start('Game');
 }
 
-function loadGameFour() {
+function loadGameFour() 
+{
     numberOfPlayers = 4;
 
     game.state.add('Game', Game);

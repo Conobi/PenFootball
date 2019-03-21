@@ -2,8 +2,8 @@
 var Preload = {
     
     // ici on charge toutes les ressources pour l'état actuel (images, sons, etc...)
-    preload: function () {
-		
+	preload: function () 
+	{
 		game.stage.backgroundColor = "#182d3b";      		
 		
 		// on créer la barre de chargement
@@ -38,7 +38,8 @@ var Preload = {
 		game.load.image("goal_toit", "assets/img/goal_toit.png");
     },   
     
-    create: function () { 
+	create: function () 
+	{ 
 		game.state.add('Menu', Menu);
 		game.state.start('Menu');
 

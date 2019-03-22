@@ -18,30 +18,30 @@ var Game = {
 		toitsGoals = game.add.group();
 		toitsGoals.enableBody = true;
 
-		var ground = platforms.create(0, convertY(100 - 8), "ground");
-		ground.width = convertX(100);
-		ground.height = convertY(8);
+		var ground = platforms.create(0, GetRelativePositionY(100 - 8), "ground");
+		ground.width = GetRelativePositionX(100);
+		ground.height = GetRelativePositionY(8);
 		ground.tint = colorGround;
 
 		// ===
 		// On créer les acteurs (ball, players, goals)
-		ball = new Ball(width * 0.5, convertY(70));
+		ball = new Ball(width * 0.5, GetRelativePositionY(70));
 
-		players.push(new Player(width * 0.3, convertY(75), 0));
-		players.push(new Player(width * 0.7, convertY(75), 1));
+		players.push(new Player(width * 0.3, GetRelativePositionY(75), 0));
+		players.push(new Player(width * 0.7, GetRelativePositionY(75), 1));
 
 		if (numberOfPlayers > 2) 
 		{
-			players.push(new Player(width * 0.2, convertY(75), 2));
-			players.push(new Player(width * 0.8, convertY(75), 3));
+			players.push(new Player(width * 0.2, GetRelativePositionY(75), 2));
+			players.push(new Player(width * 0.8, GetRelativePositionY(75), 3));
 		}
 
-		goals.push(new Goal(0, convertY(92), 1, 0));
-		goals.push(new Goal(game.width, convertY(92), -1, 1));
+		goals.push(new Goal(0, GetRelativePositionY(92), 1, 0));
+		goals.push(new Goal(game.width, GetRelativePositionY(92), -1, 1));
 
 		// ===
 		// affiche le score
-		var text = game.add.text(game.world.centerX, convertY(19.0), scoreRed + " - " + scoreBlue, style);
+		var text = game.add.text(game.world.centerX, GetRelativePositionY(19.0), scoreRed + " - " + scoreBlue, style);
 		text.anchor.setTo(.5, .5);
 		text.resolution = 3;
 
@@ -64,7 +64,7 @@ var Game = {
 		console.log("AddForce");
 
 		// addforce with the other players
-		for (var i = 0; i < players.length; i++)
+		/*for (var i = 0; i < players.length; i++)
 		{
 			if (players[i] == emitter)
 				continue;
@@ -80,9 +80,9 @@ var Game = {
 				players[i].player.body.velocity.x = -directionX * PLAYER_SUPERPOWER_FORCE;
 				players[i].player.body.velocity.y = -directionY * PLAYER_SUPERPOWER_FORCE;
 			}
-		}
+		}//*/
 
-		// addforce with the ball
+		// addforce to the ball
 		var distance = this.GetDistance(ball.ball.body.x, ball.ball.body.y, emitter.player.body.x, emitter.player.body.y);	
 			
 		if (distance < radius)

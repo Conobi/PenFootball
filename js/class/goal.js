@@ -1,6 +1,5 @@
 class Goal 
 {
-
     constructor(x, y, scaleX, id) 
     {			        
         this.goal = game.add.sprite(x, y, "goal");				

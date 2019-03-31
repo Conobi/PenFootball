@@ -19,21 +19,21 @@ var Game = {
 		toitsGoals.enableBody = true;
 
 		var ground = platforms.create(0, GetRelativePositionY(100 - 8), "ground");
-		ground.width = GetRelativePositionX(100);
+		ground.width = game.width;
 		ground.height = GetRelativePositionY(8);
 		ground.tint = colorGround;
 
 		// ===
 		// On créer les acteurs (ball, players, goals)
-		ball = new Ball(width * 0.5, GetRelativePositionY(70));
+		ball = new Ball(game.width * 0.5, GetRelativePositionY(70));
 
-		players.push(new Player(width * 0.3, GetRelativePositionY(75), 0));
-		players.push(new Player(width * 0.7, GetRelativePositionY(75), 1));
+		players.push(new Player(game.width * 0.3, GetRelativePositionY(75), 0));
+		players.push(new Player(game.width * 0.7, GetRelativePositionY(75), 1));
 
 		if (numberOfPlayers > 2) 
 		{
-			players.push(new Player(width * 0.2, GetRelativePositionY(75), 2));
-			players.push(new Player(width * 0.8, GetRelativePositionY(75), 3));
+			players.push(new Player(game.width * 0.2, GetRelativePositionY(75), 2));
+			players.push(new Player(game.width * 0.8, GetRelativePositionY(75), 3));
 		}
 
 		goals.push(new Goal(0, GetRelativePositionY(92), 1, 0));

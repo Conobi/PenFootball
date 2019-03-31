@@ -1,10 +1,24 @@
 // global variables
-const width = 954;//window.innerWidth * window.devicePixelRatio;
-const height = 541;//window.innerHeight * window.devicePixelRatio;
-const initialWidth = 1680;
-const initialHeight = 1048;
-const ratioX = width / initialWidth;
-const ratioY = height / initialHeight;
+const initialWidth = 954;
+const initialHeight = 541;
+const screen = [(window.innerWidth * window.devicePixelRatio) - 45, (window.innerHeight * window.devicePixelRatio) - 146 - 45];
+const rect = [initialWidth, initialHeight];
+// const width = initialWidth;
+// const height = initialHeight;
+// const width = window.innerWidth * window.devicePixelRatio;
+// const height = window.innerHeight * window.devicePixelRatio;
+
+var screenAspect = screen[0] / screen[1];
+var rectAspect = rect[0] / rect[1];
+
+var scaleFactor;
+if (screenAspect > rectAspect)
+    scaleFactor = screen[1] / rect[1];
+else
+    scaleFactor = screen[0] / rect[0];
+
+const width = initialWidth * scaleFactor;
+const height = initialHeight * scaleFactor;
 
 var game = new Phaser.Game(width, height, Phaser.CANVAS, 'game-area');
 var players = [], controls = [], goals = [], toitsGoals = [];
@@ -24,8 +38,8 @@ console.log("Window resolution: " + width + " x " + height);
 game.state.add('BootStrap', BootStrap);
 game.state.start('BootStrap');
 
-// on créer 2 fonctions qui permet d'afficher le jeu sur de multiples résolutions
 /**
+ *  on créer 2 fonctions qui permet d'afficher le jeu sur de multiples résolutions
  * 
  * @param {*} x the value in percent
  * @returns a relative position 

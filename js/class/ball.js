@@ -1,6 +1,6 @@
-const ballMinVel = 15;
-const ballMaxVel = 150;
-const ballMaxFactorVel = 2;
+const BALL_MIN_VEL = 15;
+const BALL_MAX_VEL = 150;
+const BALL_MAX_FACTOR_VELOCITY = 2;
 
 class Ball 
 {
@@ -52,15 +52,15 @@ class Ball
 	PlayerHit(ball, player) 
 	{
 		// la balle part à 45degrees donc vel x = vel y
-		var vel = Math.abs(player.body.velocity.x) * ballMaxFactorVel;
+		var vel = Math.abs(player.body.velocity.x) * BALL_MAX_FACTOR_VELOCITY;
 
-		if (vel < ballMinVel)
+		if (vel < BALL_MIN_VEL)
 		{
-			vel = ballMinVel;
+			vel = BALL_MIN_VEL;
 		}
-		if (vel > ballMaxVel)
+		if (vel > BALL_MAX_VEL)
 		{
-			vel = ballMaxVel;
+			vel = BALL_MAX_VEL;
 		}
 
 		var dir = ball.body.x - player.body.x;

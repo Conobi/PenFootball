@@ -1,6 +1,6 @@
 // global variables
-const width = 954;//window.innerWidth * window.devicePixelRatio;
-const height = 541;//window.innerHeight * window.devicePixelRatio;
+const width = window.innerWidth * window.devicePixelRatio;
+const height = window.innerHeight * window.devicePixelRatio;
 const initialWidth = 1680;
 const initialHeight = 1048;
 const ratioX = width / initialWidth;
@@ -19,23 +19,16 @@ const colorBlue = 0x006ca1, colorRed = 0xee2222;
 const colorSecondBlue = 0x0099e5, colorSecondRed = 0xff4c4c;
 const colorGround = 0x34bf49, constBG = 0xaef6a6;
 
-console.log("Window resolution: " + width + " x " + height);
-
 game.state.add('BootStrap', BootStrap);
 game.state.start('BootStrap');
 
 // on créer 2 fonctions qui permet d'afficher le jeu sur de multiples résolutions
-/**
- * 
- * @param {*} x the value in percent
- * @returns a relative position 
- */
-function GetRelativePositionX(x) 
+function convertX(x) 
 {
     return x * width / 100;
 }
 
-function GetRelativePositionY(y) 
+function convertY(y) 
 {
     return y * height / 100;
 }

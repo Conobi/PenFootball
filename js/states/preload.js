@@ -12,19 +12,19 @@ var Preload = {
 		var logo = game.add.sprite(game.world.centerX, game.world.centerY, "logo");
 		logo.anchor.setTo(0.5);				
 		
-		var bgPreloadBar = game.add.sprite(game.world.centerX, GetRelativePositionY(85), "bg_preload_bar");		
+		var bgPreloadBar = game.add.sprite(game.world.centerX, convertY(85), "bg_preload_bar");		
 		bgPreloadBar.anchor.setTo(0.5);				
-		bgPreloadBar.width = width - GetRelativePositionX(5);		
-		bgPreloadBar.height = GetRelativePositionY(10);
+		bgPreloadBar.width = width - convertX(5);		
+		bgPreloadBar.height = convertY(10);
 		
-		var preloadBar = game.add.sprite(game.world.centerX, GetRelativePositionY(85), "preload_bar");		
+		var preloadBar = game.add.sprite(game.world.centerX, convertY(85), "preload_bar");		
 		preloadBar.anchor.setTo(0.5);				
-		preloadBar.width = width - GetRelativePositionX(5);		
-		preloadBar.height = GetRelativePositionY(10);
+		preloadBar.width = width - convertX(5);		
+		preloadBar.height = convertY(10);
 		game.load.setPreloadSprite(preloadBar);
 		
-		style = {font: GetRelativePositionX(5)+"px pixellari", fill: "#000000"};
-		styleFat = {font: GetRelativePositionX(8)+"px pixellari", fill: "#000000"};
+		style = {font: convertX(5)+"px pixellari", fill: "#000000"};
+		styleFat = {font: convertX(8)+"px pixellari", fill: "#000000"};
 
 		// ====
 		// CHARGEMENT DES SCRIPTS   

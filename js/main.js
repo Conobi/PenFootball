@@ -17,8 +17,8 @@ var scoreBlue = 0, scoreRed = 0;
 // colors
 var colorBlue = 0x455bd5;
 var colorRed = 0xd54545;
-var colorSecondBlue = 0x6275dc;
-var colorSecondRed = 0xdc6262;
+var colorSecondBlue = 0x8492e3;
+var colorSecondRed = 0xe38484;
 var colorGround = 0x88D545;
 var constBG = 0x9EDCD1;
 /*

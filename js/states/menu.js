@@ -1,7 +1,7 @@
-var Menu = 
-{
-    create: function () 
-    {
+var Menu = {
+
+    create: function () {
+        
         game.stage.backgroundColor = constBG;
         
         // LE TITRE		
@@ -34,6 +34,7 @@ var Menu =
         buttonFour.height = convertY(25);
         buttonFour.inputEnabled = true;
         
+        
         players.push(new Player(width * 0.3, convertY(80), 0, true));
         players.push(new Player(width * 0.7, convertY(80), 1, true));                
 		players.push(new Player(width * 0.2, convertY(80), 2, true));
@@ -44,8 +45,7 @@ var Menu =
 		text.resolution = 3;
     },      
     
-    update: function() 
-    {
+    update: function() {
         if (buttonFour.input.pointerOver())
             buttonFour.alpha = 0.8;
         else

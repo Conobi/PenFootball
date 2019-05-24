@@ -15,8 +15,8 @@ var numberOfPlayers = 2;
 var scoreBlue = 0, scoreRed = 0;
 
 // colors
-var colorBlue = 0x006ca1;
-var colorRed = 0xee2222;
+var colorBlue = 0x455bd5;
+var colorRed = 0xd54545;
 var colorSecondBlue = 0x0099e5;
 var colorSecondRed = 0xff4c4c;
 var colorGround = 0x88D545;

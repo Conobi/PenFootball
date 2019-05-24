@@ -53,54 +53,9 @@ var Game = {
 	{
 		for (var i = 0; i < players.length; i++)
 		{
-			players[i].Update(this);
+			players[i].update();
 		}
 
-		ball.Update();
+		ball.update();
 	},
-
-	AddForce: function (emitter, radius)
-	{
-		console.log("AddForce");
-
-		// addforce with the other players
-		for (var i = 0; i < players.length; i++)
-		{
-			if (players[i] == emitter)
-				continue;
-
-			var distance = this.GetDistance(players[i].player.body.x, players[i].player.body.y, emitter.player.body.x, emitter.player.body.y);	
-			
-			if (distance < radius)
-			{		
-				var directionX = players[i].player.body.x - emitter.player.body.x;
-				var directionY = players[i].player.body.y - emitter.player.body.y;
-
-				// add velocity
-				players[i].player.body.velocity.x = -directionX * PLAYER_SUPERPOWER_FORCE;
-				players[i].player.body.velocity.y = -directionY * PLAYER_SUPERPOWER_FORCE;
-			}
-		}
-
-		// addforce with the ball
-		var distance = this.GetDistance(ball.ball.body.x, ball.ball.body.y, emitter.player.body.x, emitter.player.body.y);	
-			
-		if (distance < radius)
-		{		
-			var directionX = ball.ball.body.x - emitter.player.body.x;
-			var directionY = ball.ball.body.y - emitter.player.body.y;
-
-			// add velocity
-			ball.ball.body.velocity.x = directionX * PLAYER_SUPERPOWER_FORCE * 0.03;
-			ball.ball.body.velocity.y = directionY * PLAYER_SUPERPOWER_FORCE * 0.03;
-		}
-	},
-
-	GetDistance: function (x1, y1, x2, y2)
-	{
-		var a = x1 - x2;
-		var b = y1 - y2;
-
-		return Math.sqrt( a*a + b*b );
-	}
 };

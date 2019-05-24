@@ -14,7 +14,7 @@ class Ball
 		this.ball.body.mass = 0.5;
 		this.ball.body.bounce.y = 0.5;
 		this.ball.body.collideWorldBounds = true;
-		this.ball.body.gravity.y = PLAYER_GRAVITY;
+		this.ball.body.gravity.y = plyGravity;
 	}
 
 	Update() 

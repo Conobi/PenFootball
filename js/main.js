@@ -6,7 +6,7 @@ const initialHeight = 1048;
 const ratioX = width / initialWidth;
 const ratioY = height / initialHeight;
 
-var game = new Phaser.Game(width, height, Phaser.CANVAS, 'game-area');
+var game = new Phaser.Game(width, height, Phaser.CANVAS, 'game');
 var players = [], controls = [], goals = [], toitsGoals = [];
 var platforms, ball, style, styleFat;
 

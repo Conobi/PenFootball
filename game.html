@@ -1,70 +1,32 @@
  <!DOCTYPE html>
- <html>
+<html>
+	<head>
+		<title>PenFootball</title>
+		
+		<meta charset="UTF-8">
+		<!--<link rel="icon" type="image/png" href="assets/img/ico.png" />-->
+		<link rel="stylesheet" href="css/style.css">	
+		<link rel="stylesheet" href="/css/style.css">	
+	</head>
+		
+	<body>				
+		<span style="font-family:'pixellari'; color:transparent;"></span>
 
- <head>
- 	<title>PenFootball</title>
+        <!-- LIBRARIES -->
+		<script src="lib/phaser.js"></script> 
+		
+        <!-- STATES -->
+		<script src="js/states/bootstrap.js"></script>
+		<script src="js/states/preload.js"></script>        
+		<script src="js/states/menu.js"></script>   
+		<script src="js/states/game.js"></script>   
 
- 	<meta charset="UTF-8">
- 	<!--<link rel="icon" type="image/png" href="assets/img/ico.png" />-->
- 	<link rel="stylesheet" href="css/style.css">
- </head>
-
- <body>
-
- 	<span style="font-family:'pixellari'; color:transparent;"></span>
- 	<div id="game-area" width="10%"></div>
-
-
- 	<center>
- 		<h2 class="force-center">Contrôles</h2>
- 		<center>
- 			<img src="img/default keyboard.png" />
- 		</center>
-
- 		<h2>Mode 1vs1</h2>
- 		<div class="row">
- 			<div class="column">
- 				<img src="img/dark blue keyboard.png" style="width:100%" />
- 				<h3>Dark blue</h3>
- 			</div>
-
- 			<div class="column">
- 				<img src="img/dark red keyboard.png" style="width:100%;" />
- 				<h3>Dark red</h3>
- 			</div>
-
- 		</div>
-
- 		<h2>Mode 2vs2</h2>
- 		<div class="row">
- 			<div class="column">
- 				<img src="img/light blue keyboard.png" style="width:100%" />
- 				<h3>Light blue</h3>
- 			</div>
-
- 			<div class="column">
- 				<img src="img/light red keyboard.png" style="width:100%" />
- 				<h3>Light red</h3>
- 			</div>
- 		</div>
- 	</center>
-
- 	<!-- LIBRARIES -->
- 	<script src="lib/phaser.js"></script>
-
- 	<!-- STATES -->
- 	<script src="js/states/bootstrap.js"></script>
- 	<script src="js/states/preload.js"></script>
- 	<script src="js/states/menu.js"></script>
- 	<script src="js/states/game.js"></script>
-
- 	<!-- CLASSES -->
- 	<script src="js/class/ball.js"></script>
- 	<script src="js/class/goal.js"></script>
- 	<script src="js/class/player.js"></script>
-
- 	<!-- MAIN SCRIPT -->
- 	<script src="js/main.js"></script>
- </body>
-
- </html>
+		<!-- CLASSES -->
+		<script src="js/class/ball.js"></script>   
+		<script src="js/class/goal.js"></script>   
+		<script src="js/class/player.js"></script>   
+        
+        <!-- MAIN SCRIPT -->
+        <script src="js/main.js"></script>
+	</body>
+</html> 

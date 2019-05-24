@@ -15,9 +15,12 @@ var numberOfPlayers = 2;
 var scoreBlue = 0, scoreRed = 0;
 
 // colors
-const colorBlue = 0x006ca1, colorRed = 0xee2222;
-const colorSecondBlue = 0x0099e5, colorSecondRed = 0xff4c4c;
-const colorGround = 0x34bf49, constBG = 0xaef6a6;
+var colorBlue = 0x006ca1;
+var colorRed = 0xee2222;
+var colorSecondBlue = 0x0099e5;
+var colorSecondRed = 0xff4c4c;
+var colorGround = 0x34bf49;
+var constBG = 0xaef6a6;
 /*
 	OLD COLOR
 const colorBlue = 0x0042ff, colorRed = 0xff0000;

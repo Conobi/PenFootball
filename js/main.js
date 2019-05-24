@@ -19,7 +19,7 @@ var colorBlue = 0x006ca1;
 var colorRed = 0xee2222;
 var colorSecondBlue = 0x0099e5;
 var colorSecondRed = 0xff4c4c;
-var colorGround = 0x9BE85C;
+var colorGround = 0x88D545;
 var constBG = 0x9EDCD1;
 /*
 	OLD COLOR

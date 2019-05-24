@@ -19,8 +19,8 @@ var colorBlue = 0x006ca1;
 var colorRed = 0xee2222;
 var colorSecondBlue = 0x0099e5;
 var colorSecondRed = 0xff4c4c;
-var colorGround = 0x72c12a;
-var constBG = 0x4fbfca;
+var colorGround = 0x9BE85C;
+var constBG = 0x9EDCD1;
 /*
 	OLD COLOR
 const colorBlue = 0x0042ff, colorRed = 0xff0000;

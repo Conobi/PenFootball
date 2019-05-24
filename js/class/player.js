@@ -77,7 +77,7 @@ class Player
 		this.CheckCollisions();
 
 		// player deceleration
-		this.player.body.velocity.x -= this.player.body.velocity.x / (game.width * PLAYER_DECCEL) * game.time.elapsed;
+		this.player.body.velocity.x -= this.player.body.velocity.x / PLAYER_DECCEL * game.time.elapsed;
 
 		// manage inputs
 		this.ManageInput(game);
